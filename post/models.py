@@ -9,7 +9,7 @@ class Category(models.Model):
     class Meta:
         db_table ='t_category'
         verbose_name_plural = '类别'
-    def __repr__(self):
+    def __str__(self):
         return "%s"%self.cname
 class Tags(models.Model):
         tname = models.CharField(max_length=32,unique=True,verbose_name='标签名称')
@@ -17,7 +17,7 @@ class Tags(models.Model):
         class Meta:
             db_table = 't_tags'
             verbose_name_plural = '标签'
-        def __repr__(self):
+        def __str__(self):
             return "%s" % self.tname
 class Post(models.Model):
     title = models.CharField(max_length=128,unique=True)
@@ -32,5 +32,5 @@ class Post(models.Model):
         db_table = 't_post'
         verbose_name_plural = '帖子'
 
-    def __repr__(self):
+    def __str__(self):
         return "%s" % self.title
