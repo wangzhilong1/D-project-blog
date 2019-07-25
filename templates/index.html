@@ -1,9 +1,24 @@
 {% extends 'base.html' %}
 {% block title %}首页{% endblock %}
 {% block main %}
-    {% for post in postlist %}
-        <div>{{ post.title }}</div>
-        <div>{{ post.created|date:'Y年m月d日' }}</div>
-        <div><h4>前言</h4>{{ post.desc }}</div>
+    {% for post in page.object_list %}
+        <div class="post">
+            <div>{{ post.title }}</div>
+            <div>{{ post.created|date:'Y年m月d日' }}</div>
+            <div><h4>前言</h4>{{ post.desc }}</div>
+        </div>
     {% endfor %}
+    <div>
+        <ul>
+            {% for i in pageRange  %}
+                {% if i == page.number %}
+                {{ i }}
+                {% else %}
+                <a href="/page/{{ i }}/">{{ i }}</a>
+                {% endif %}
+
+            {% endfor %}
+        </ul>
+    </div>
+
 {% endblock %}
