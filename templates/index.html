@@ -1,15 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}首页{% endblock %}
 {% block main %}
-<<<<<<< HEAD
 {#    <h3>个人博客</h3>#}
-    {% for post in postlist %}
-        <div class="post">
-            <div ><h3>{{ post.title }}</h3></div>
-            <div>{{ post.created|date:'Y年m月d日' }}</div>
-            <div><h4>前言</h4>{{ post.desc }}</div>
-        </div>
-=======
     {% for post in postlist %}
         <div>{{ post.title }}</div>
         <div>{{ post.created|date:'Y年m月d日' }}</div>
