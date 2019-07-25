@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from django.urls import path
-
+#661ba25ad3a4a2b9a9353b73a31cc2ee9a086acb
 urlpatterns = [
     url(r'admin/', admin.site.urls),
     url(r'',include('post.urls'))
