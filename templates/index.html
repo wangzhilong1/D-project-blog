@@ -1,16 +1,24 @@
 {% extends 'base.html' %}
 {% block title %}首页{% endblock %}
 {% block main %}
-    {% for post in page.object_list %}
+    {% for post in page %}
         <div class="post">
+            <div>
+                <a href="/post/{{ post.id }}">{{ post.title }}</a>
+            </div>
             <div>{{ post.title }}</div>
-            <div>{{ post.created|date:'Y年m月d日' }}</div>
+            <div>{{ post.created }}</div>
             <div><h4>前言</h4>{{ post.desc }}</div>
         </div>
+        <hr>
     {% endfor %}
     <div>
         <ul>
+            {% if page.has_previous %}
+                <a href="/page/{{ page.previous_page_number }}">上一页</a>
+            {% endif %}
             {% for i in pageRange  %}
+
                 {% if i == page.number %}
                 {{ i }}
                 {% else %}
@@ -18,6 +26,9 @@
                 {% endif %}
 
             {% endfor %}
+            {% if page.has_next %}
+                <a href="/page/{{ page.next_page_number }}">下一页</a>
+            {% endif %}
         </ul>
     </div>
 

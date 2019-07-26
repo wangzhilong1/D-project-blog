@@ -7,7 +7,7 @@
 
           {% for cate_post in cate_posts %}
             <li class="category-list-item">
-              <a class="category-list-link" href="/category/{{ cate_post.category }}">{{ cate_post.category__cname }}</a>
+              <a class="category-list-link" href="/category/{{ cate_post.category }}/">{{ cate_post.category__cname }}</a>
               <span class="category-list-count">{{ cate_post.count }}</span>
             </li>
           {% endfor %}
@@ -23,7 +23,7 @@
       <ul class="archive-list">
             {% for ap in arc_posts %}
             <li class="archive-list-item">
-                <a class="archive-list-link" href="/archive/{{ ap.0|date:'Y' }}/{{ ap.0|date:'m' }}">{{ ap.0|date:'Y年m月' }} </a>
+                <a class="archive-list-link" href="/archive/{{ ap.0|date:'Y' }}/{{ ap.0|date:'m' }}/">{{ ap.0|date:'Y年m月' }} </a>
                 <span class="archive-list-count">{{ ap.1 }}</span>
             </li>
           {% endfor %}
@@ -37,7 +37,7 @@
       <ul>
             {% for rp in recent_posts %}
                 <li>
-                    <a href="/post/{{ rp.id }}" target="_blank">{{ rp.title }}</a>
+                    <a href="/post/{{ rp.id }}/" target="_blank">{{ rp.title }}</a>
                 </li>
             {% endfor %}
       </ul>
